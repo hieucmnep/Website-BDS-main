@@ -1,5 +1,5 @@
 import React from "react";
-import "./ListingsSection.css";
+import "./assets/ListingsSection.css";
 
 function ListingsSection({ title, listings }) {
   return (

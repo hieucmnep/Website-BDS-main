@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import ListingsSection from "./components/ListingsSection";
-import LocationSection from "./components/LocationSection";
-import Footer from "./components/Footer";
-import LoginRegister from "./components/LoginRegister"; // thêm trang login
+import Header from "../components/Header";
+import SearchBar from "../components/SearchBar";
+import ListingsSection from "../components/ListingsSection";
+import LocationSection from "../components/LocationSection";
+import Footer from "../components/Footer";
+import LoginRegister from "../components/LoginRegister"; // thêm trang login
 
 import "./App.css";
 

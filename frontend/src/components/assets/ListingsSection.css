@@ -1,0 +1,90 @@
+.listing {
+  padding: 70px 8%;
+  background: #f4f6f9;
+  text-align: center;
+}
+
+.listing-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #1a2b4c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+.listing-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+.card-img {
+  height: 220px;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.listing-card:hover img {
+  transform: scale(1.08);
+}
+
+.listing-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.listing-info h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.listing-info p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  color: #1a2b4c;
+}
+
+.btn-detail {
+  margin-top: 15px;
+  background: #1a2b4c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-detail:hover {
+  background: #274472;
+}

@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import "./LoginRegister.css"; // file CSS riêng
+import "./assets/LoginRegister.css"; // file CSS riêng
 
 export default function LoginRegister() {
   const [isLogin, setIsLogin] = useState(true);

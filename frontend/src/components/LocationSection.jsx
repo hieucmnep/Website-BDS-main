@@ -1,5 +1,5 @@
 import React from "react";
-import "./LocationSection.css";
+import "./assets/LocationSection.css";
 
 function LocationSection({ locations }) {
   return (

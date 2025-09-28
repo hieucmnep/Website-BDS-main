@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap');
+
+/* Base styles */
+.footer {
+  position: relative;
+  background: rgba(0, 0, 0, 0.1); /* Glassmorphism base */
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  margin-top: auto; /* Để footer luôn ở dưới nếu dùng flex layout cho body */
+  overflow: hidden;
+  width: 100%; /* Đảm bảo full width */
+}
+
+.footer__bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f0f23, #1a1a2e, #16213e, #0f3460);
+  opacity: 0.7;
+  animation: gradientShift 15s ease infinite reverse; /* Reverse để khác Header */
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.footer-container {
+  width: 100%; /* Full width */
+  padding: 3rem 2rem 2rem; /* Padding hợp lý, không max-width để full */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid tự lấp đầy full width */
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box; /* Đảm bảo padding không làm overflow */
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Logo & Description */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Orbitron', monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #00d4ff;
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+  from { text-shadow: 0 0 10px #00d4ff; }
+  to { text-shadow: 0 0 20px #00d4ff, 0 0 30px #00d4ff; }
+}
+
+.logo-icon {
+  font-size: 2.2rem;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #00d4ff); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 15px #00d4ff); }
+}
+
+.logo-text {
+  background: linear-gradient(45deg, #00d4ff, #5a67d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-desc {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+/* Headings & Links */
+.footer-heading {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.footer-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00d4ff, #5a67d8);
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+  transform: translateX(5px);
+  text-shadow: 0 0 10px #00d4ff;
+}
+
+.footer-link:hover::before {
+  width: 100%;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.social-link:hover {
+  background: rgba(0, 212, 255, 0.2);
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  transform: rotate(360deg) scale(1.1);
+}
+
+.social-icon {
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+  color: #00d4ff;
+}
+
+/* Contact */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-item {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+  color: #00d4ff;
+  text-shadow: 0 0 5px #00d4ff;
+}
+
+/* Bottom Copyright (Cũng full width) */
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 1rem 2rem; /* Giữ padding để text không sát mép */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  width: 100%;
+}
+
+.copyright-text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 300;
+  background: linear-gradient(45deg, rgba(0, 212, 255, 0.5), rgba(90, 103, 216, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive (Full width vẫn giữ trên mobile) */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1rem 1.5rem; /* Giảm padding trên mobile cho gọn */
+  }
+
+  .footer-logo {
+    font-size: 1.5rem;
+  }
+
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .social-link {
+    width: 45px;
+    height: 45px;
+  }
+
+  .footer-bottom {
+    padding: 1rem 1rem;
+  }
+
+  .copyright-text {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-desc {
+    font-size: 0.9rem;
+  }
+
+  .footer-heading {
+    font-size: 1.1rem;
+  }
+
+  .footer-container {
+    padding: 2rem 0.5rem 1.5rem; /* Sát mép hơn trên mobile nhỏ */
+  }
+
+  .footer-bottom {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Dark mode support (nếu body có class .dark) */
+body.dark .footer {
+  background: rgba(10, 10, 20, 0.9);
+}
